@@ -26,4 +26,13 @@ I followed [Luke Smith](https://github.com/LukeSmithxyz/voidrice)'s structure fo
 * [ThinkPad-specific configuration](thinkpad-specific.md)
 
 ## Installation
-TODO
+Before installing, make sure your configs have been backed up. `install.sh` has some backup protection, but it is no way guaranteeing that it won't mess up your configurations. Use at your own risk.
+
+`curl -Lks http://bit.do/install-dots | /bin/bash`
+
+## Special Thanks to
+* [Luke Smith](https://lukesmith.xyz/). I learned a lot from him, and also stole a lot of stuff from his dotfiles. My dotfiles are largely based on his, so be sure to check him out too
+* [Atlassian](https://www.atlassian.com/git/tutorials/dotfiles) for teaching me how to sync my dotfiles to git, and the script
+* [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
+* [the Suckless team](https://suckless.org/) for its awesome software
+* [neovim-lua-config](https://github.com/miltonllera/neovim-lua-config), as my neovim config is basically the same as this
