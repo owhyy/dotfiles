@@ -1,0 +1,14 @@
+#!/bin/sh
+alias cf="cd /home/snooze/.config && ls -a" \
+sc="cd /home/snooze/.local/bin && ls -a" \
+src="cd /home/snooze/.local/src/ && ls -a" \
+cfdwm="sudo $EDITOR ~/.local/src/dwm/config.h" \
+cfdwmb="sudo $EDITOR ~/.local/src/dwmblocks/blocks.h" \
+cfst="sudo $EDITOR ~/.local/src/st/config.h" \
+cfa="$EDITOR ~/.config/shell/aliasrc" \
+cfv="cd ~/.config/nvim/" \
+cfz="$EDITOR ~/.config/zsh/.zshrc" \
+z="zathura" \
+smci="sudo make clean install" \
+config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME" \
+
