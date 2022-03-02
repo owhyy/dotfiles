@@ -1,0 +1,11 @@
+#!bin/sh
+
+xrandr --dpi 96
+xset r rate 300 60 &
+xset -dpms
+xset s off
+autostart="mpd unclutter pipewire"
+
+for program in $autostart; do
+	pidof -s "$program" || setsid -f "$program"
+done >/dev/null 2>&1
