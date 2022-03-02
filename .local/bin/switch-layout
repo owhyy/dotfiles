@@ -1,0 +1,16 @@
+#!/bin/sh
+
+kb="$(setxkbmap -query | grep -oP 'layout:\s*\K\w+')" || exit 1
+
+
+case $kb in 
+	us)
+	setxkbmap -layout "ro" 
+	;;
+	ro)
+	setxkbmap -layout "us" 	
+	;;
+esac
+
+pkill -RTMIN+30 "${STATUSBAR:-dwmblocks}"
+echo "$kb"

@@ -1,0 +1,4 @@
+#!/bin/sh
+
+printf "%s:%s\n" "DISK" "$(df -h "/" | awk ' /[0-9]/ {print $3 "/" $2}')"
+
