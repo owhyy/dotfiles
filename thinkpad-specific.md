@@ -35,7 +35,9 @@ I only use the trackpoint, so I disable the touchpad it. If you want to use it, 
 
 `/etc/udev/rules.d/10-trackpoint.rules`
 
-`ACTION=="add", SUBSYSTEM=="input", ATTR{name}=="TPPS/2 IBM TrackPoint", ATTR{device/drift_time}="30"`
+```
+ACTION=="add", SUBSYSTEM=="input", ATTR{name}=="TPPS/2 IBM TrackPoint", ATTR{device/drift_time}="30"
+```
 
 This fixes a known bug - the trackpoint moving by itslef. Keep in mind this does not completely eliminate it, but it reduces it to a negligible amount.
 
