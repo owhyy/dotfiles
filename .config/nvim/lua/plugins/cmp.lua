@@ -21,10 +21,7 @@ local opts = {
   },
 }
 
--- require('luasnip.loaders.from_vscode').lazy_load(opts)
-
 require('luasnip.loaders.from_vscode').lazy_load()
-require('luasnip.loaders.from_snipmate').lazy_load({path= "../snippets"})
 
 cmp.setup({
   -- Don't autocomplete, otherwise there is too much clutter
@@ -91,7 +88,7 @@ cmp.setup({
     {name = 'nvim_lua'},
     {name = 'path'},
     {name = 'buffer'},
-    {name = 'spell'},
+--    {name = 'omni'},
     -- {name = 'calc'},
   },
 })
