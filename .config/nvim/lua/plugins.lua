@@ -46,12 +46,13 @@ return require('packer').startup(function(use)
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
+--      "hrsh7th/cmp-omni",
       "hrsh7th/cmp-nvim-lua",
+      "saadparwaiz1/cmp_luasnip",
+      "rafamadriz/friendly-snippets",
     },
     config = function() require('plugins.cmp') end,
   })
-
-  use "saadparwaiz1/cmp_luasnip"
 
   -- NvimTree
   use({
@@ -78,6 +79,15 @@ return require('packer').startup(function(use)
 
   -- Latex
   use "lervag/vimtex"
+
+  -- Markdown preview
+  use({"iamcco/markdown-preview.nvim",
+    config = function() require('plugins.markdown-preview') end
+  })
+
+  use "ellisonleao/glow.nvim"
+
+  use "ggandor/lightspeed.nvim"
 
   if packer_bootstrap then
     require('packer').sync()
