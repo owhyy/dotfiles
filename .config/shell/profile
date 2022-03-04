@@ -2,6 +2,7 @@
 
 export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
 export PATH=/home/snooze/.cargo/bin:$PATH
+export PATH=/home/snooze/.emacs.d/bin:$PATH
 
 export TERMINAL="st"
 export BROWSER="chromium"

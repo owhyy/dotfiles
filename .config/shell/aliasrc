@@ -11,4 +11,4 @@ cfz="$EDITOR ~/.config/zsh/.zshrc" \
 z="zathura" \
 smci="sudo make clean install" \
 config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME" \
-
+cs="xclip -selection clipboard"
