@@ -80,14 +80,22 @@ return require('packer').startup(function(use)
   -- Latex
   use "lervag/vimtex"
 
-  -- Markdown preview
-  use({"iamcco/markdown-preview.nvim",
-    config = function() require('plugins.markdown-preview') end
-  })
 
+use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+
+  -- use({
+  --     "iamcco/markdown-preview.nvim",
+  --     cmd = "MarkdownPreview",
+  --     ft = "markdown",
+  --     run = "cd app && yarn install",
+  --     config = function()
+  --         require("plugins.markdown-preview")
+  --     end,
+  -- })
   use "ellisonleao/glow.nvim"
 
   use "ggandor/lightspeed.nvim"
+  use "tpope/vim-surround"
 
   if packer_bootstrap then
     require('packer').sync()
