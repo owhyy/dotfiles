@@ -2,7 +2,6 @@
 -- local execute = vim.api.nvim_command
 local fn = vim.fn
 local cmd = vim.cmd
-
 -- Boostrap Packer
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 local packer_bootstrap
@@ -12,10 +11,10 @@ end
 
 -- Rerun PackerCompile everytime pluggins.lua is updated
 cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-  augroup end
+augroup packer_user_config
+autocmd!
+autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+augroup end
 ]])
 
 -- Load Packer
@@ -46,7 +45,7 @@ return require('packer').startup(function(use)
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
---      "hrsh7th/cmp-omni",
+      --      "hrsh7th/cmp-omni",
       "hrsh7th/cmp-nvim-lua",
       "saadparwaiz1/cmp_luasnip",
       "rafamadriz/friendly-snippets",
@@ -81,23 +80,28 @@ return require('packer').startup(function(use)
   use "lervag/vimtex"
 
 
-use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
   -- use({
-  --     "iamcco/markdown-preview.nvim",
-  --     cmd = "MarkdownPreview",
-  --     ft = "markdown",
-  --     run = "cd app && yarn install",
-  --     config = function()
-  --         require("plugins.markdown-preview")
-  --     end,
-  -- })
-  use "ellisonleao/glow.nvim"
+    --     "iamcco/markdown-preview.nvim",
+    --     cmd = "MarkdownPreview",
+    --     ft = "markdown",
+    --     run = "cd app && yarn install",
+    --     config = function()
+      --         require("plugins.markdown-preview")
+      --     end,
+      -- })
+      use "ellisonleao/glow.nvim"
 
-  use "ggandor/lightspeed.nvim"
-  use "tpope/vim-surround"
+      use "ggandor/lightspeed.nvim"
+      use "tpope/vim-surround"
+      use ({
+        "nvim-lualine/lualine.nvim",
+        config = function () require('plugins.lualine') end,
+      })
 
-  if packer_bootstrap then
-    require('packer').sync()
-  end
-end)
+      use 'shaunsingh/solarized.nvim'
+      if packer_bootstrap then
+        require('packer').sync()
+      end
+    end)

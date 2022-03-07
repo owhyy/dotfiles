@@ -19,6 +19,7 @@ vim.o.shiftwidth         = 2
 vim.o.splitbelow         = true
 vim.o.splitright         = true
 vim.o.mouse              = 'a'
+vim.o.clipboard            = "unnamedplus"
 
 -- Vim specific
 vim.o.hidden             = true                          -- Do not save when switching buffers
