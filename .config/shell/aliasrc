@@ -11,4 +11,6 @@ cfz="$EDITOR ~/.config/zsh/.zshrc" \
 z="zathura" \
 smci="sudo make clean install" \
 config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME" \
-cs="xclip -selection clipboard"
+cs="xclip -selection clipboard" \
+sdn="sudo shutdown -h now" \
+kvb="sudo killall -9 viber" \

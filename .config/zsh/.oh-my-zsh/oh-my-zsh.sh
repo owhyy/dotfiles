@@ -57,9 +57,9 @@ mkdir -p "$ZSH_CACHE_DIR/completions"
 (( ${fpath[(Ie)"$ZSH_CACHE_DIR/completions"]} )) || fpath=("$ZSH_CACHE_DIR/completions" $fpath)
 
 # Check for updates on initial load...
-if [[ "$DISABLE_AUTO_UPDATE" != true ]]; then
-  source "$ZSH/tools/check_for_upgrade.sh"
-fi
+# if [[ "$DISABLE_AUTO_UPDATE" != true ]]; then
+#   source "$ZSH/tools/check_for_upgrade.sh"
+# fi
 
 # Initializes Oh My Zsh
 
