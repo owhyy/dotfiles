@@ -14,3 +14,4 @@ config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME" \
 cs="xclip -selection clipboard" \
 sdn="sudo shutdown -h now" \
 kvb="sudo killall -9 viber" \
+lf="lfrun"\
