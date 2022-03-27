@@ -2,6 +2,7 @@
 
 #define TERMINAL "st"
 #define TERMCLASS "St"
+#define PrintScreenDWM	    0x0000ff61
 
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
@@ -92,6 +93,7 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_w,      spawn,          SHCMD("$BROWSER") },
+	{ MODKEY,                       XK_e,      spawn,          SHCMD("emacs") },
 	{ MODKEY,             		XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,	              	XK_z,      incrgaps,       {.i = +1 } },
 	{ MODKEY,    			XK_x,      incrgaps,       {.i = -1 } },
@@ -125,6 +127,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
+	{ 0, PrintScreenDWM, 		spawn, 		SHCMD("flameshot gui") },
 	{ 0, XF86XK_AudioMute,		spawn,		SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
 	{ 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("pamixer --allow-boost -i 3; kill -44 $(pidof dwmblocks)") },
 	{ 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("pamixer --allow-boost -d 3; kill -44 $(pidof dwmblocks)") },
