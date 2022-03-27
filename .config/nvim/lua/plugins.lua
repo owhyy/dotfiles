@@ -103,6 +103,8 @@ return require('packer').startup(function(use)
       })
 
       use 'shaunsingh/solarized.nvim'
+      use 'dylanaraps/pascal_lint.nvim'
+
       if packer_bootstrap then
         require('packer').sync()
       end
