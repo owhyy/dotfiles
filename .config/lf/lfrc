@@ -1,0 +1,8 @@
+map D delete
+map f $nvim $(fzf)
+cmd aj %lf -remote "send $id cd '$(autojump $1)'"
+map a push :aj<space>
+map <enter> shell
+map o &mimeopen $f
+set previewer ~/.config/lf/preview
+set cleaner ~/.config/lf/cleaner
