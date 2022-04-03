@@ -88,6 +88,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 
 #include <X11/XF86keysym.h>
+#include "push.c"
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -102,9 +103,11 @@ static Key keys[] = {
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_j,      pushdown,       {0} },
+	{ MODKEY|ShiftMask,             XK_k,      pushup,         {0} },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-	{ MODKEY,                       XK_Return, zoom,           {0} },
+	{ MODKEY,                       XK_space,  zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,             		XK_q,      killclient,     {0} },
 	{ MODKEY,             		XK_Escape, spawn,     	   SHCMD("resdwm")},
@@ -114,7 +117,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_y,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY|ShiftMask,             XK_y,      setlayout,      {.v = &layouts[3]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[4]} },
-	{ MODKEY, 	                XK_space,  togglefloating, {0} },
+	{ MODKEY|ShiftMask, 	        XK_space,  togglefloating, {0} },
 	{ MODKEY,             		XK_f,      togglefullscr,  {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
