@@ -21,6 +21,9 @@
 ;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
 
+;; (setq doom-font "LiterationMono Nerd Font Mono")
+(setq doom-font "Iosevka Term")
+
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
@@ -51,8 +54,11 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+(with-eval-after-load 'org-roam
+  (setq org-roam-directory (expand-file-name "~/Documents/org/nodes")
+        org-id-link-to-org-use-id t
+        org-id-track-globally t))
 
-(setq org-roam-directory "~/Documents/org/nodes/")
 (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1)))
 (use-package org-roam
   :ensure t
@@ -87,24 +93,24 @@
 
 ;; this doesn't work
 (setq org-todo-keywords
-    (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)")
-            (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)"))))
+      (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)")
+              (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)"))))
 
 ;; this doesn't work
 (setq-default org-enforce-todo-dependencies t)
 
 ;; this doesn't work
 (setq org-todo-keyword-faces
-    (quote (("TODO" :foreground "red" :weight bold)
-            ("NEXT" :foreground "blue" :weight bold)
-            ("DONE" :foreground "forest green" :weight bold)
-            ("WAITING" :foreground "orange" :weight bold)
-            ("HOLD" :foreground "magenta" :weight bold)
-            ("CANCELLED" :foreground "forest green" :weight bold))))
+      (quote (("TODO" :foreground "red" :weight bold)
+              ("NEXT" :foreground "blue" :weight bold)
+              ("DONE" :foreground "forest green" :weight bold)
+              ("WAITING" :foreground "orange" :weight bold)
+              ("HOLD" :foreground "magenta" :weight bold)
+              ("CANCELLED" :foreground "forest green" :weight bold))))
+
 
 (require 'org-journal)
 (require 'org-roam)
 (require 'org-roam-ui)
 (require 'sml-mode)
 (require 'org-superstar)
-
