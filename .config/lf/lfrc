@@ -1,4 +1,5 @@
 map D delete
+map i rename
 map f $nvim $(fzf)
 cmd aj %lf -remote "send $id cd '$(autojump $1)'"
 map a push :aj<space>
