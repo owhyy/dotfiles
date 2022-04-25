@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# called on startup to remap caps lock to ctrl
+setxkbmap -option caps:ctrl_modifier
+xset -q | grep "Caps Lock:\s*on" && xdotool key Caps_Lock

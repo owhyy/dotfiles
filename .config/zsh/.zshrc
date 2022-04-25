@@ -79,6 +79,7 @@ ZSH_THEME="robbyrussell"
 #alias zshconfig="nvim $ZDOTDIR/.zshrc"
 
 bindkey -s '^b' 'zathura "$( find ~/Documents/books -iname "*.pdf" | fzf)" \n'
+# bindkey -s '^f' 'tmux-sessionizer \n'
 
 plugins=(
   git
@@ -115,3 +116,5 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias luamake=/home/snooze/lua-language-server/3rd/luamake/luamake
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

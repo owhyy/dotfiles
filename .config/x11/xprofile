@@ -4,8 +4,8 @@ xrandr --dpi 96
 xset r rate 300 60 &
 xset -dpms
 xset s off
-autostart="mpd unclutter pipewire"
 sudo ntpd -qg
+autostart="mpd unclutter pipewire remaps"
 
 for program in $autostart; do
 	pidof -s "$program" || setsid -f "$program"
