@@ -5,11 +5,11 @@ export PATH=/home/snooze/.cargo/bin:$PATH
 export PATH=/home/snooze/.emacs.d/bin:$PATH
 
 export TERMINAL="st"
-export BROWSER="chromium"
+export BROWSER="brave"
 export EDITOR="nvim"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XINITRC="${XDG_CONFIG_HOME:-$HOME/.config}/x11/xinitrc"
 export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
+export JDTLS_HOME="$HOME/.local/share/nvim/lsp_servers/jdtls/"
 
 [ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && exec startx "$XINITRC"
-
