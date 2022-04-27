@@ -6,6 +6,7 @@ xset -dpms
 xset s off
 sudo ntpd -qg
 autostart="mpd unclutter pipewire remaps"
+eval $(opam env)
 
 for program in $autostart; do
 	pidof -s "$program" || setsid -f "$program"
