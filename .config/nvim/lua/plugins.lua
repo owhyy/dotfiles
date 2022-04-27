@@ -79,33 +79,27 @@ return require('packer').startup(function(use)
   -- Latex
   use "lervag/vimtex"
 
-  -- black colortheme
+  -- Better movement
+  use "ggandor/lightspeed.nvim"
+  -- Bracket thing
+  use "tpope/vim-surround"
+  -- Statusline
+  use ({
+    "nvim-lualine/lualine.nvim",
+    config = function () require('plugins.lualine') end,
+  })
+
+  -- Colorthemes
+  use 'shaunsingh/solarized.nvim'
+  -- Black colortheme
   use "aditya-azad/candle-grey"
 
-  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+  -- Pacal linter
+  use 'dylanaraps/pascal_lint.nvim'
+  -- Racket better support
+  use 'wlangstroth/vim-racket'
 
-  -- use({
-    --     "iamcco/markdown-preview.nvim",
-    --     cmd = "MarkdownPreview",
-    --     ft = "markdown",
-    --     run = "cd app && yarn install",
-    --     config = function()
-      --         require("plugins.markdown-preview")
-      --     end,
-      -- })
-      use "ellisonleao/glow.nvim"
-
-      use "ggandor/lightspeed.nvim"
-      use "tpope/vim-surround"
-      use ({
-        "nvim-lualine/lualine.nvim",
-        config = function () require('plugins.lualine') end,
-      })
-
-      use 'shaunsingh/solarized.nvim'
-      use 'dylanaraps/pascal_lint.nvim'
-
-      if packer_bootstrap then
-        require('packer').sync()
-      end
-    end)
+  if packer_bootstrap then
+    require('packer').sync()
+  end
+end)
