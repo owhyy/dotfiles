@@ -118,3 +118,4 @@ source $ZSH/oh-my-zsh.sh
 alias luamake=/home/snooze/lua-language-server/3rd/luamake/luamake
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[[ ! -r /home/snooze/.opam/opam-init/init.zsh ]] || source /home/snooze/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
