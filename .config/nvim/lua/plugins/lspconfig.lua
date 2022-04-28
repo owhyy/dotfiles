@@ -7,7 +7,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 -- Enable language servers with common settings
-local servers = {"bashls", "clangd", "pyright", "sumneko_lua", "texlab", "jdtls", "ocamllsp"}
+local servers = {"bashls", "clangd", "pyright", "sumneko_lua", "texlab", "jdtls", "ocamllsp", "racket_langserver", "pasls", "prosemd_lsp", "solargraph"}
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup({
     on_attach = common_on_attach,
@@ -16,3 +16,5 @@ for _, lsp in ipairs(servers) do
 end
 
 require('lsp.sumneko')
+require('lsp.ruby-ls')
+require('lsp.java-lsp')

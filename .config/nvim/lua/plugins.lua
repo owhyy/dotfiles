@@ -49,6 +49,7 @@ return require('packer').startup(function(use)
       "hrsh7th/cmp-nvim-lua",
       "saadparwaiz1/cmp_luasnip",
       "rafamadriz/friendly-snippets",
+      "honza/vim-snippets",
     },
     config = function() require('plugins.cmp') end,
   })

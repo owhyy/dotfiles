@@ -21,7 +21,9 @@ local opts = {
   },
 }
 
-require('luasnip.loaders.from_vscode').lazy_load()
+-- uncomment the one you prefer; i chose snipmate, because there's more snippets for the stuff I use
+-- require('luasnip.loaders.from_vscode').lazy_load()
+require('luasnip.loaders.from_snipmate').lazy_load()
 
 cmp.setup({
   -- Don't autocomplete, otherwise there is too much clutter

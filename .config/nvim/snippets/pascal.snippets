@@ -1,0 +1,94 @@
+snippet cls clrscr
+		clrscr;${1}
+snippet tbg textbackground
+		textbackground(${1});${2}
+snippet tc textcolor
+		textcolor(${1});${2}
+snippet var
+		var ${1:varName} := ${2:value};
+
+snippet program program
+		program ${1};
+			var
+				${2}
+			begin
+				${3}
+		end.
+
+snippet bg beging
+	begin
+			${1}
+	end${2}
+
+snippet bg; beging;
+	begin
+			${1}
+	end;${2}
+
+
+snippet rec record
+	type ${1} = record
+			${2}
+	end;${3}
+
+snippet if if_then
+	if ${1} then
+		${2}
+
+snippet ife if_then_else
+	if ${1} then
+			${2}
+	else
+			${3};
+
+snippet wrl writeln
+	writeln(${1});${2}
+
+snippet wr write
+	write(${1});${2}
+
+snippet rd readd
+	read(${1});${2}
+
+snippet rdl readln
+	readln(${1});${2}
+
+snippet rdk readkey
+	readkey;${1}
+
+snippet gt gotoxy
+	gotoxy(${1:0}, ${2:0});${3}
+
+snippet case case
+	case ${1} of
+			 ${2}
+	end; ${3}
+
+snippet for for
+	for ${1:i} := ${2:0} to ${3:10} do
+			${4}
+
+snippet wh while
+	while ${1} do
+				${2}
+
+snippet rep rep
+	repeat
+			${2}
+	until ${1};
+
+snippet fun function
+	function ${1:name} : ${2};
+	var
+			${3}
+	begin
+			${4}
+	end;
+
+snippet pro procedure
+	procedure ${1:name};
+	var
+			${2}
+	begin
+			${3}
+	end;

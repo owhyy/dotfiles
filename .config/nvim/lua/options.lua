@@ -43,6 +43,6 @@ vim.cmd [[
 
 -- Disable inline error messages
 vim.diagnostic.config {
-  virtual_text = false,
+  virtual_text = true,
   underline = false,            -- Keep error underline
 }

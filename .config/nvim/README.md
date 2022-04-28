@@ -150,10 +150,18 @@ Binaries for each language servers must be installed from their relevant repo. M
 
 - **Java**: jdtls
   Installing from AUR, the default folder will be `/usr/java/jdtls`, and trying to run it will give a "Permission denied". You probably can somehow bypass this, I just chose the easy way: installing from the lsp script.
+
   ```
   :LspInstall jdtls
   ```
   And add `export JDTLS_HOME="$HOME/.local/share/nvim/lsp_servers/jdtls/"` to your `.bashrc` or `.zshrc` (depending on which you use).
+
+- **OCaml*: ocamllsp
+  You can install it from opam, but easier will be to just use the lsp installer again.
+
+  ```
+  :LspInstall ocamllsp
+  ```
 
 If a module complains about the verion of node being too old (pyright will do this), then run the following:
 ```bash
