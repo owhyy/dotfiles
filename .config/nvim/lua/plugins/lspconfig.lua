@@ -18,3 +18,5 @@ end
 require('lsp.sumneko')
 require('lsp.ruby-ls')
 require('lsp.java-lsp')
+require('lsp.ocaml-lsp')
+require('lsp.racket-lsp')

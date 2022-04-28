@@ -100,6 +100,8 @@ return require('packer').startup(function(use)
   -- Racket better support
   use 'wlangstroth/vim-racket'
 
+  -- Better formatter
+  use 'sbdchd/neoformat'
   if packer_bootstrap then
     require('packer').sync()
   end
