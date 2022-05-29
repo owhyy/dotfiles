@@ -102,6 +102,9 @@ return require('packer').startup(function(use)
 
   -- Better formatter
   use 'sbdchd/neoformat'
+
+  -- Diagnostics window
+  use 'folke/trouble.nvim'
   if packer_bootstrap then
     require('packer').sync()
   end
