@@ -3,10 +3,10 @@
 local fn = vim.fn
 local cmd = vim.cmd
 -- Boostrap Packer
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 local packer_bootstrap
 if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system({'git', 'clone','https://github.com/wbthomason/packer.nvim', install_path})
+  packer_bootstrap = fn.system({ 'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path })
 end
 
 -- Rerun PackerCompile everytime pluggins.lua is updated
@@ -23,7 +23,7 @@ cmd([[packadd packer.nvim]])
 -- Initialize pluggins
 return require('packer').startup(function(use)
   -- Let Packer manage itself
-  use({'wbthomason/packer.nvim', opt = true})
+  use({ 'wbthomason/packer.nvim', opt = true })
 
   -- Formatting
   use 'tpope/vim-commentary'
@@ -34,10 +34,13 @@ return require('packer').startup(function(use)
     'neovim/nvim-lspconfig',
     config = function() require('plugins.lspconfig') end
   })
-  use 'williamboman/nvim-lsp-installer'  -- Helper for installing most language servers
+  use 'williamboman/nvim-lsp-installer' -- Helper for installing most language servers
+
+  use 'mfussenegger/nvim-jdtls' -- java lsp
+
 
   -- Autocomplete
-  use "L3MON4D3/LuaSnip"  -- Snippet engine
+  use "L3MON4D3/LuaSnip" -- Snippet engine
   use({
     "hrsh7th/nvim-cmp",
     -- Sources for nvim-cmp
@@ -58,7 +61,7 @@ return require('packer').startup(function(use)
   use({
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons',
-    config = function() require('plugins.nvimtree') end,  -- Must add this manually
+    config = function() require('plugins.nvimtree') end, -- Must add this manually
   })
 
   -- Treesitter
@@ -71,11 +74,11 @@ return require('packer').startup(function(use)
   -- Telescope
   use({
     'nvim-telescope/telescope.nvim',
-    requires = {{'nvim-lua/plenary.nvim'}},
+    requires = { { 'nvim-lua/plenary.nvim' } },
     config = function() require('plugins.telescope') end,
   })
 
-  use({'nvim-telescope/telescope-fzf-native.nvim', run ='make'})
+  use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
 
   -- Latex
   use "lervag/vimtex"
@@ -85,20 +88,34 @@ return require('packer').startup(function(use)
   -- Bracket thing
   use "tpope/vim-surround"
   -- Statusline
-  use ({
+  use({
     "nvim-lualine/lualine.nvim",
-    config = function () require('plugins.lualine') end,
+    config = function() require('plugins.lualine') end,
   })
 
   -- Colorthemes
-  use 'shaunsingh/solarized.nvim'
+  -- use 'shaunsingh/solarized.nvim'
   -- Black colortheme
-  use "aditya-azad/candle-grey"
+  -- use 'aditya-azad/candle-grey'
+  -- use { "adisen99/codeschool.nvim", requires = { "rktjmp/lush.nvim" } }
+  -- zenburn
+  use 'phha/zenburn.nvim'
+  -- black colortheme
+  use 'mrjones2014/lighthaus.nvim'
+  -- highlightedyank
+  use 'machakann/vim-highlightedyank'
+  -- smooth scrolling
+  use 'karb94/neoscroll.nvim'
+  require('neoscroll').setup()
 
   -- Pacal linter
   use 'dylanaraps/pascal_lint.nvim'
   -- Racket better support
   use 'wlangstroth/vim-racket'
+  -- Better SML support
+  use 'jez/vim-better-sml'
+  -- Pyret support
+  use 'rachitnigam/pyret-lang.vim'
 
   -- Better formatter
   use 'sbdchd/neoformat'

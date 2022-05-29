@@ -1,10 +1,5 @@
 #!/bin/zsh
 
-export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
-export PATH=/home/snooze/.cargo/bin:$PATH
-export PATH=/home/snooze/.emacs.d/bin:$PATH
-export PATH=/home/snooze/.local/share/gem/ruby/3.0.0/bin:$PATH
-
 export TERMINAL="st"
 export BROWSER="chromium"
 export EDITOR="nvim"
@@ -13,11 +8,20 @@ export XINITRC="${XDG_CONFIG_HOME:-$HOME/.config}/x11/xinitrc"
 export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 
 # for nvim lsp
-export JDTLS_HOME="$HOME/.local/share/nvim/lsp_servers/jdtls/" # for java
+export JDTLS_HOME='/usr/share/java/jdtls' # for java
+export JAVA_HOME='/usr/lib/jvm/java-18-openjdk'
 export FPCDIR='/usr/lib/fpc/src'      # FPC source directory (This is the only required option for the server to work).
 export PP='/usr/lib/fpc/3.2.2/ppcx64' # Path to the Free Pascal compiler executable.
 export LAZARUSDIR='/usr/lib/lazarus'  # Path to the Lazarus sources.
 export FPCTARGET=''                   # Target operating system for cross compiling.
 export FPCTARGETCPU='x86_64'          # Target CPU for cross compiling.
+
+export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
+export PATH=/home/snooze/.cargo/bin:$PATH
+export PATH=/home/snooze/.emacs.d/bin:$PATH
+export PATH=$JAVA_HOME/bin:$PATH
+export PATH=/home/snooze/.local/share/gem/ruby/3.0.0/bin:$PATH
+export PATH=/home/snooze/.local/share/smlformat/:$PATH
+
 
 [ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && exec startx "$XINITRC"

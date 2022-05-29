@@ -1,13 +1,3 @@
-map D delete
-map i rename
-map f $nvim $(fzf)
-cmd aj %lf -remote "send $id cd '$(autojump $1)'"
-map a push :aj<space>
-map <enter> shell
-map o &mimeopen $f
-set previewer ~/.config/lf/preview
-set cleaner ~/.config/lf/cleaner
-
 cmd open ${{
     case $(file --mime-type "$(readlink -f $f)" -b) in
 	application/vnd.openxmlformats-officedocument.spreadsheetml.sheet) localc $fx ;;
@@ -29,3 +19,16 @@ cmd open ${{
         *) for f in $fx; do setsid -f $OPENER $f >/dev/null 2>&1; done;;
     esac
 }}
+
+map D delete
+map i rename
+map f $nvim $(fzf)
+cmd aj %lf -remote "send $id cd '$(autojump $1)'"
+map a push :aj<space>
+map <enter> shell
+map o &mimeopen $f
+map O $mimeopen --ask $f
+map . set hidden!
+
+set previewer ~/.config/lf/preview
+set cleaner ~/.config/lf/cleaner
