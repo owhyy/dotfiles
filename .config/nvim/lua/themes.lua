@@ -7,4 +7,3 @@ vim.opt.termguicolors = true
 
 require('no-clown-fiesta')
 -- require('ayu').colorscheme()
-

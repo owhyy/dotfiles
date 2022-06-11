@@ -95,7 +95,7 @@ return require('packer').startup(function(use)
     config = function() require('plugins.lualine') end,
   })
 
-  -- black colortheme
+  -- black colorthemes
   -- use 'mrjones2014/lighthaus.nvim'
   use 'Shatur/neovim-ayu'
   use 'aktersnurra/no-clown-fiesta.nvim'
@@ -116,6 +116,9 @@ return require('packer').startup(function(use)
 
   -- Better formatter
   use 'sbdchd/neoformat'
+
+  -- Diagnostics window
+  use 'folke/trouble.nvim'
   if packer_bootstrap then
     require('packer').sync()
   end

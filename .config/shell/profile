@@ -26,7 +26,12 @@ export SOLARGRAPH_CACHE="$XDG_CACHE_HOME/solargraph"
 export AWT_TOOLKIT="MToolkit wmname LG3D"	# May have to install wmname
 export _JAVA_AWT_WM_NONREPARENTING=1	# Fix for Java applications in dwm
 
-# for nvim lsp
-export JDTLS_HOME="$HOME/.local/share/nvim/lsp_servers/jdtls/" # for java
+export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
+export PATH=/home/snooze/.cargo/bin:$PATH
+export PATH=/home/snooze/.emacs.d/bin:$PATH
+export PATH=$JAVA_HOME/bin:$PATH
+export PATH=/home/snooze/.local/share/gem/ruby/3.0.0/bin:$PATH
+export PATH=/home/snooze/.local/share/smlformat/:$PATH
+
 
 [ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && exec startx "$XINITRC"

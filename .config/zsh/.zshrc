@@ -78,7 +78,7 @@ ZSH_THEME="robbyrussell"
 #[[ -s /home/snooze/.autojump/etc/profile.d/autojump.sh ]] && source /home/snooze/.autojump/etc/profile.d/autojump.sh
 #alias zshconfig="nvim $ZDOTDIR/.zshrc"
 
-bindkey -s '^b' 'zathura "$( find ~/Documents/books -iname "*.pdf" | fzf)" \n'
+bindkey -s '^b' 'zathura "$( find ~/Documents/books -iname "*.pdf" -o -iname "*.djvu" -o -iname "*.epub" | fzf)" \n'
 # bindkey -s '^f' 'tmux-sessionizer \n'
 
 plugins=(
