@@ -81,6 +81,7 @@ return require('packer').startup(function(use)
     })
 
     use({'nvim-telescope/telescope-fzf-native.nvim', run = 'make'})
+    use 'p00f/nvim-ts-rainbow'
 
     -- Latex
     use "lervag/vimtex"
@@ -110,7 +111,7 @@ return require('packer').startup(function(use)
     use 'karb94/neoscroll.nvim'
     require('neoscroll').setup()
 
-    -- Pacal linter
+    -- Pascal linter
     use 'dylanaraps/pascal_lint.nvim'
     -- Racket better support
     use 'wlangstroth/vim-racket'
@@ -118,6 +119,15 @@ return require('packer').startup(function(use)
     use 'jez/vim-better-sml'
     -- Pyret support
     use 'rachitnigam/pyret-lang.vim'
+    -- black colorthemes
+    -- use 'mrjones2014/lighthaus.nvim'
+    use 'Shatur/neovim-ayu'
+    use 'aktersnurra/no-clown-fiesta.nvim'
+    -- highlightedyank
+    use 'machakann/vim-highlightedyank'
+    -- smooth scrolling
+    use 'karb94/neoscroll.nvim'
+    require('neoscroll').setup()
 
     -- Better formatter
     use 'sbdchd/neoformat'

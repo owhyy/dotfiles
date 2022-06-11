@@ -1,7 +1,7 @@
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'lighthaus',
+    theme = 'no-clown-fiesta',
     component_separators = { left = '|', right = '|' },
     section_separators = { left = '', right = '' },
     disabled_filetypes = {},
