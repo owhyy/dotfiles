@@ -2,6 +2,10 @@
 
 require('nvim-treesitter.configs').setup({
 	highlight = { enable = true, additional_vim_regex_highlighting = false},
+  rainbow = {
+    enable = true,
+    extendded_mode = true,
+  },
   -- We must manually specify which parsers to install
 	ensure_installed = {
     "bash",

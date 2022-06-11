@@ -156,12 +156,18 @@ Binaries for each language servers must be installed from their relevant repo. M
   ```
   And add `export JDTLS_HOME="$HOME/.local/share/nvim/lsp_servers/jdtls/"` to your `.bashrc` or `.zshrc` (depending on which you use).
 
-- **OCaml*: ocamllsp
+- **OCaml**: ocamllsp
   You can install it from opam, but easier will be to just use the lsp installer again.
 
   ```
   :LspInstall ocamllsp
   ```
+
+- **Ruby**: solargraph
+  You need to install `rbenv`, add `eval "$(rbenv init -)"` to your `xprofile` (so it runs at startup), and run `gem install solargraph`.
+
+- **Racket**: racket-langserver
+  You need to have racket installec, and run `raco pkg install racket-langserver`.
 
 If a module complains about the verion of node being too old (pyright will do this), then run the following:
 ```bash
