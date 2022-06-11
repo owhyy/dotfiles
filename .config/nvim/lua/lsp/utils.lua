@@ -40,9 +40,10 @@ function M.common_on_attach(client, bufnr)
   bufnnoremap("<C-n>", "<Cmd>lua vim.diagnostic.goto_next()<CR>")
   bufnnoremap("<C-p>", "<Cmd>lua vim.diagnostic.goto_prev()<CR>")
 
-  if client.resolved_capabilities.document_formatting then
-    cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
-  end
+  -- Autoformat on save
+  -- if client.resolved_capabilities.document_formatting then
+  --   cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+  -- end
 end
 
 return M

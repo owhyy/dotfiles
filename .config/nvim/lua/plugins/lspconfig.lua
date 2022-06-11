@@ -1,3 +1,4 @@
+require("nvim-lsp-installer").setup {}
 local nvim_lsp = require('lspconfig')
 local utils = require('lsp.utils')
 local common_on_attach = utils.common_on_attach
