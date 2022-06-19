@@ -134,5 +134,8 @@ return require('packer').startup(function(use)
 
     -- Diagnostics window
     use 'folke/trouble.nvim'
+
+    -- Make statusline and tmux's statusline be the same
+    use 'vimpostor/vim-tpipeline'
     if packer_bootstrap then require('packer').sync() end
 end)
