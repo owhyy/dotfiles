@@ -90,7 +90,9 @@ cmp.setup({
     {name = 'nvim_lua'},
     {name = 'path'},
     {name = 'buffer'},
---    {name = 'omni'},
+    {name = 'nvim_lsp_signature_help'},
+    -- {name = 'omni'},
+    {name = 'tags'},
     -- {name = 'calc'},
   },
 })

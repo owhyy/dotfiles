@@ -15,7 +15,7 @@ require('nvim-treesitter.configs').setup({
 		"lua",
     "python",
     "markdown",
-    "racket",
+    -- "racket",
   },
   indent = { enable = true },
 })

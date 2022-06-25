@@ -52,7 +52,7 @@ return require('packer').startup(function(use)
         -- Sources for nvim-cmp
         requires = {
             "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer", "hrsh7th/cmp-path",
-            --      "hrsh7th/cmp-omni",
+            "hrsh7th/cmp-omni", "hrsh7th/cmp-nvim-lsp-signature-help",
             "hrsh7th/cmp-nvim-lua", "saadparwaiz1/cmp_luasnip",
             "rafamadriz/friendly-snippets", "honza/vim-snippets"
         },
@@ -137,5 +137,16 @@ return require('packer').startup(function(use)
 
     -- Make statusline and tmux's statusline be the same
     use 'vimpostor/vim-tpipeline'
+
+    -- Python text objects
+    use 'jeetsukumaran/vim-pythonsense'
+
+    -- .tmux.conf highlighting
+    use 'tmux-plugins/vim-tmux'
+
+    -- ctags
+    use 'quangnguyen30192/cmp-nvim-tags'
+    use 'ludovicchabant/vim-gutentags'
+
     if packer_bootstrap then require('packer').sync() end
 end)
