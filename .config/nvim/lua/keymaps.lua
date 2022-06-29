@@ -50,7 +50,9 @@ nnoremap("<leader>fg", "<Cmd>Telescope live_grep<CR>")
 
 -- File explorer
 nnoremap("<leader>e", "<Cmd>NvimTreeToggle<CR>")  -- NvimTree
--- nnoremap("<leader>e", "<Cmd>RnvimrToggle<CR>")
+nnoremap("<leader>dn", ":lua require('dap-python').test_method()<CR>")
+nnoremap("<leader>df", ":lua require('dap-python').test_class()<CR>")
+nnoremap("<leader>ds", ":lua require('dap-python').debug_selection()<CR>")
 
 -- EasyAlign
 -- xmap("ga", "<cmd>EasyAlign")

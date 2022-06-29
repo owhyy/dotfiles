@@ -6,10 +6,14 @@ local cmd = vim.cmd
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 local packer_bootstrap
 if fn.empty(fn.glob(install_path)) > 0 then
+<<<<<<< HEAD
     packer_bootstrap = fn.system({
         'git', 'clone', 'https://github.com/wbthomason/packer.nvim',
         install_path
     })
+=======
+  packer_bootstrap = fn.system({ 'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path })
+>>>>>>> a1e7fffe591aa1bdfaf94e9132c223ef70865609
 end
 
 -- Rerun PackerCompile everytime pluggins.lua is updated
@@ -25,8 +29,8 @@ cmd([[packadd packer.nvim]])
 
 -- Initialize pluggins
 return require('packer').startup(function(use)
-    -- Let Packer manage itself
-    use({'wbthomason/packer.nvim', opt = true})
+  -- Let Packer manage itself
+  use({ 'wbthomason/packer.nvim', opt = true })
 
     -- Formatting
     use {
@@ -57,13 +61,6 @@ return require('packer').startup(function(use)
             "rafamadriz/friendly-snippets", "honza/vim-snippets"
         },
         config = function() require('plugins.cmp') end
-    })
-
-    -- NvimTree
-    use({
-        'kyazdani42/nvim-tree.lua',
-        requires = 'kyazdani42/nvim-web-devicons',
-        config = function() require('plugins.nvimtree') end -- Must add this manually
     })
 
     -- Treesitter
@@ -120,9 +117,10 @@ return require('packer').startup(function(use)
     -- Pyret support
     use 'rachitnigam/pyret-lang.vim'
     -- black colorthemes
-    -- use 'mrjones2014/lighthaus.nvim'
+    use 'mrjones2014/lighthaus.nvim'
     use 'Shatur/neovim-ayu'
     use 'aktersnurra/no-clown-fiesta.nvim'
+    use 'morhetz/gruvbox'
     -- highlightedyank
     use 'machakann/vim-highlightedyank'
     -- smooth scrolling
@@ -137,7 +135,7 @@ return require('packer').startup(function(use)
 
     -- Make statusline and tmux's statusline be the same
     use 'vimpostor/vim-tpipeline'
-
+    -- use 'edkolev/tmuxline.vim'
     -- Python text objects
     use 'jeetsukumaran/vim-pythonsense'
 
@@ -148,5 +146,12 @@ return require('packer').startup(function(use)
     use 'quangnguyen30192/cmp-nvim-tags'
     use 'ludovicchabant/vim-gutentags'
 
+    -- debugger
+    use 'rcarriga/nvim-dap-ui'
+    use 'mfussenegger/nvim-dap-python'
+    use {
+        'mfussenegger/nvim-dap',
+        config = function() require('plugins.dapconfig') end
+    }
     if packer_bootstrap then require('packer').sync() end
 end)

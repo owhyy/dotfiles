@@ -1,7 +1,8 @@
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'no-clown-fiesta',
+    -- theme = 'no-clown-fiesta',
+    theme = 'ayu_mirage',
     component_separators = { left = '|', right = '|' },
     section_separators = { left = '', right = '' },
     disabled_filetypes = {},

@@ -43,6 +43,16 @@ vim.cmd [[
   let g:vimtex_view_method = 'zathura'
 ]]
 
+-- vim.cmd [[
+--   let g:tmuxline_powerline_separators = 0
+-- ]]
+-- let g:tpipeline_statusline = '%='
+vim.cmd [[
+  let g:tpipeline_split = 1
+  let g:tpipeline_usepane = 1
+  let g:tpipeline_fillcentre = 1
+]]
+
 -- Disable inline error messages
 vim.diagnostic.config {
   virtual_text = true,
