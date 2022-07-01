@@ -16,3 +16,4 @@ sdn="sudo shutdown -h now" \
 kvb="sudo killall -9 viber" \
 lf="lfrun" \
 pomo='sleep 3000 && dunst | notify-send "break"' \
+pip='python -m pip' \

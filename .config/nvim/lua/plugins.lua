@@ -6,14 +6,10 @@ local cmd = vim.cmd
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 local packer_bootstrap
 if fn.empty(fn.glob(install_path)) > 0 then
-<<<<<<< HEAD
     packer_bootstrap = fn.system({
         'git', 'clone', 'https://github.com/wbthomason/packer.nvim',
         install_path
     })
-=======
-  packer_bootstrap = fn.system({ 'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path })
->>>>>>> a1e7fffe591aa1bdfaf94e9132c223ef70865609
 end
 
 -- Rerun PackerCompile everytime pluggins.lua is updated
@@ -77,6 +73,7 @@ return require('packer').startup(function(use)
         config = function() require('plugins.telescope') end
     })
 
+    use 'nvim-telescope/telescope-dap.nvim'
     use({'nvim-telescope/telescope-fzf-native.nvim', run = 'make'})
     use 'p00f/nvim-ts-rainbow'
 
@@ -93,6 +90,14 @@ return require('packer').startup(function(use)
         config = function() require('plugins.lualine') end
     })
 
+    use {
+      'kyazdani42/nvim-tree.lua',
+      config = function() require('plugins.nvimtree') end,
+      requires = {
+        'kyazdani42/nvim-web-devicons', -- optional, for file icons
+      },
+      tag = 'nightly' -- optional, updated every week. (see issue #1193)
+    }
     -- Colorthemes
     -- use 'shaunsingh/solarized.nvim'
     -- Black colortheme
@@ -134,7 +139,7 @@ return require('packer').startup(function(use)
     use 'folke/trouble.nvim'
 
     -- Make statusline and tmux's statusline be the same
-    use 'vimpostor/vim-tpipeline'
+    -- use 'vimpostor/vim-tpipeline'
     -- use 'edkolev/tmuxline.vim'
     -- Python text objects
     use 'jeetsukumaran/vim-pythonsense'
@@ -148,6 +153,7 @@ return require('packer').startup(function(use)
 
     -- debugger
     use 'rcarriga/nvim-dap-ui'
+    use 'theHamsta/nvim-dap-virtual-text'
     use 'mfussenegger/nvim-dap-python'
     use {
         'mfussenegger/nvim-dap',
