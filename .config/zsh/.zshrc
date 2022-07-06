@@ -36,8 +36,10 @@ bindkey -s '^f' '^ucd "$(dirname "$(fzf)")"\n'
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh 2>/dev/null
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh 2>/dev/null
 source /usr/share/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme 2>/dev/null
-source /usr/share/zsh/plugins/autojump/autojump.plugin.zsh 2>/dev/null
 # source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh 2>/dev/null
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+# do paru -S autojump before
+[[ -s /etc/profile.d/autojump.zsh ]] && source /etc/profile.d/autojump.zsh
+autoload -U compinit && compinit -u
