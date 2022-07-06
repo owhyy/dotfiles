@@ -6,7 +6,7 @@ export PATH=/home/snooze/.config/emacs/bin:$PATH
 export PATH=/home/snooze/.local/share/gem/ruby/3.0.0/bin:$PATH
 
 export TERMINAL="st"
-export BROWSER="chromium"
+export BROWSER="firefox"
 export EDITOR="nvim"
 
 export XDG_CONFIG_HOME="$HOME/.config"
