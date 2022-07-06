@@ -7,7 +7,7 @@ local common_on_attach = utils.common_on_attach
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- Enable language servers with common settings
-local servers = { "bashls", "clangd", "pyright", "texlab", "jdtls", "ocamllsp", "racket_langserver", "pasls", "prosemd_lsp", "solargraph", "sumneko_lua", "eslint" , "tsserver", "dockerls", "yamlls"}
+local servers = { "bashls", "clangd", "pyright", "texlab", "jdtls", "ocamllsp", "racket_langserver", "pasls", "prosemd_lsp", "solargraph", "sumneko_lua", "eslint" , "tsserver", "dockerls", "yamlls", "cssls", "html", "emmet_ls"}
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup({
     on_attach = common_on_attach,
