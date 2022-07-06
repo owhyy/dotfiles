@@ -8,6 +8,7 @@ sudo ntpd -qg
 autostart="mpd unclutter pipewire remaps"
 eval $(opam env)
 eval "$(rbenv init -)"
+xbanish &
 
 for program in $autostart; do
 	pidof -s "$program" || setsid -f "$program"
