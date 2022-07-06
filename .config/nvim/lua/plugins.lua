@@ -25,8 +25,8 @@ cmd([[packadd packer.nvim]])
 
 -- Initialize pluggins
 return require('packer').startup(function(use)
-  -- Let Packer manage itself
-  use({ 'wbthomason/packer.nvim', opt = true })
+    -- Let Packer manage itself
+    use({'wbthomason/packer.nvim', opt = true})
 
     -- Formatting
     use {
@@ -91,12 +91,12 @@ return require('packer').startup(function(use)
     })
 
     use {
-      'kyazdani42/nvim-tree.lua',
-      config = function() require('plugins.nvimtree') end,
-      requires = {
-        'kyazdani42/nvim-web-devicons', -- optional, for file icons
-      },
-      tag = 'nightly' -- optional, updated every week. (see issue #1193)
+        'kyazdani42/nvim-tree.lua',
+        config = function() require('plugins.nvimtree') end,
+        requires = {
+            'kyazdani42/nvim-web-devicons' -- optional, for file icons
+        },
+        tag = 'nightly' -- optional, updated every week. (see issue #1193)
     }
     -- Colorthemes
     -- use 'shaunsingh/solarized.nvim'
@@ -126,6 +126,11 @@ return require('packer').startup(function(use)
     use 'Shatur/neovim-ayu'
     use 'aktersnurra/no-clown-fiesta.nvim'
     use 'morhetz/gruvbox'
+    -- Indent lines
+    use {
+        'lukas-reineke/indent-blankline.nvim',
+        config = function() require('plugins.indent-blankline') end
+    }
     -- highlightedyank
     use 'machakann/vim-highlightedyank'
     -- smooth scrolling
