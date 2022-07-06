@@ -1,18 +1,58 @@
 #!/bin/sh
-alias cf="cd /home/snooze/.config && ls -a" \
-sc="cd /home/snooze/.local/bin && ls -a" \
-src="cd /home/snooze/.local/src/ && ls -a" \
-cfdwm="sudo $EDITOR ~/.local/src/dwm/config.h" \
-cfdwmb="sudo $EDITOR ~/.local/src/dwmblocks/blocks.h" \
-cfst="sudo $EDITOR ~/.local/src/st/config.h" \
-cfa="$EDITOR ~/.config/shell/aliasrc" \
-cfv="cd ~/.config/nvim/" \
-cfz="$EDITOR ~/.config/zsh/.zshrc" \
-z="zathura" \
-smci="sudo make clean install" \
-config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME" \
-cs="xclip -selection clipboard" \
-sdn="sudo shutdown -h now" \
-kvb="sudo killall -9 viber" \
-lf="lfrun" \
-pomo='sleep 3000 && dunst | notify-send "break"' \
+
+# General
+alias \
+  cf="cd /home/snooze/.config && ls -a" \
+  sc="cd /home/snooze/.local/bin && ls -a" \
+  src="cd /home/snooze/.local/src/ && ls -a" \
+  cfdwm="sudo $EDITOR ~/.local/src/dwm/config.h" \
+  cfdwmb="sudo $EDITOR ~/.local/src/dwmblocks/blocks.h" \
+  cfst="sudo $EDITOR ~/.local/src/st/config.h" \
+  cfa="$EDITOR ~/.config/shell/aliasrc" \
+  cfv="cd ~/.config/nvim/" \
+  cfz="$EDITOR ~/.config/zsh/.zshrc" \
+  z="zathura" \
+  smci="sudo make clean install" \
+  config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME" \
+  cs="xclip -selection clipboard" \
+  sdn="sudo shutdown -h now" \
+  kvb="sudo killall -9 viber" \
+  lf="lfrun" \
+  pomo='sleep 3000 && dunst | notify-send "break"' \
+  pip='python -m pip' \
+  upd='paru -Syu' \
+  ..='cd ../' \
+  ...='cd ../..' \
+  ....='cd ../../..' \
+  .....='cd ../../../..' \
+  ......='cd ../../../../..'
+
+# List directory contents
+alias ll='ls -lh'
+alias la='ls -lah'
+
+# Verbosity settings
+alias \
+	cp="cp -iv" \
+	mv="mv -iv" \
+	rm="rm -vI" \
+	bc="bc -ql" \
+	md="mkdir -pv" \
+	yt="yt-dlp --embed-metadata -i" \
+	yta="yt -x -f bestaudio/best"
+
+# Colorize commands when possible.
+alias \
+	ls="exa -h --icons -a --group-directories-first" \
+	grep="rg --color=auto" \
+	diff="diff --color=auto" \
+	cat="bat --color=always --style=full" \
+	ip="ip -color=auto"
+
+# Git
+alias \
+  gcmsg='git commit -m' \
+  gs='git status' \
+  gpull='git pull' \
+  gp='git push' \
+  gd='git diff' \

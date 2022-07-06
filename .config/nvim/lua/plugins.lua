@@ -25,8 +25,8 @@ cmd([[packadd packer.nvim]])
 
 -- Initialize pluggins
 return require('packer').startup(function(use)
-    -- Let Packer manage itself
-    use({'wbthomason/packer.nvim', opt = true})
+  -- Let Packer manage itself
+  use({ 'wbthomason/packer.nvim', opt = true })
 
     -- Formatting
     use {
@@ -59,13 +59,6 @@ return require('packer').startup(function(use)
         config = function() require('plugins.cmp') end
     })
 
-    -- NvimTree
-    use({
-        'kyazdani42/nvim-tree.lua',
-        requires = 'kyazdani42/nvim-web-devicons',
-        config = function() require('plugins.nvimtree') end -- Must add this manually
-    })
-
     -- Treesitter
     use({
         'nvim-treesitter/nvim-treesitter',
@@ -80,6 +73,7 @@ return require('packer').startup(function(use)
         config = function() require('plugins.telescope') end
     })
 
+    use 'nvim-telescope/telescope-dap.nvim'
     use({'nvim-telescope/telescope-fzf-native.nvim', run = 'make'})
     use 'p00f/nvim-ts-rainbow'
 
@@ -96,6 +90,14 @@ return require('packer').startup(function(use)
         config = function() require('plugins.lualine') end
     })
 
+    use {
+      'kyazdani42/nvim-tree.lua',
+      config = function() require('plugins.nvimtree') end,
+      requires = {
+        'kyazdani42/nvim-web-devicons', -- optional, for file icons
+      },
+      tag = 'nightly' -- optional, updated every week. (see issue #1193)
+    }
     -- Colorthemes
     -- use 'shaunsingh/solarized.nvim'
     -- Black colortheme
@@ -120,9 +122,10 @@ return require('packer').startup(function(use)
     -- Pyret support
     use 'rachitnigam/pyret-lang.vim'
     -- black colorthemes
-    -- use 'mrjones2014/lighthaus.nvim'
+    use 'mrjones2014/lighthaus.nvim'
     use 'Shatur/neovim-ayu'
     use 'aktersnurra/no-clown-fiesta.nvim'
+    use 'morhetz/gruvbox'
     -- highlightedyank
     use 'machakann/vim-highlightedyank'
     -- smooth scrolling
@@ -136,8 +139,8 @@ return require('packer').startup(function(use)
     use 'folke/trouble.nvim'
 
     -- Make statusline and tmux's statusline be the same
-    use 'vimpostor/vim-tpipeline'
-
+    -- use 'vimpostor/vim-tpipeline'
+    -- use 'edkolev/tmuxline.vim'
     -- Python text objects
     use 'jeetsukumaran/vim-pythonsense'
 
@@ -148,5 +151,13 @@ return require('packer').startup(function(use)
     use 'quangnguyen30192/cmp-nvim-tags'
     use 'ludovicchabant/vim-gutentags'
 
+    -- debugger
+    use 'rcarriga/nvim-dap-ui'
+    use 'theHamsta/nvim-dap-virtual-text'
+    use 'mfussenegger/nvim-dap-python'
+    use {
+        'mfussenegger/nvim-dap',
+        config = function() require('plugins.dapconfig') end
+    }
     if packer_bootstrap then require('packer').sync() end
 end)

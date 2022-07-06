@@ -11,4 +11,3 @@ nvim_lsp.pyright.setup {
     --       typingPath="./typings",
     --     }
     -- }
-}
