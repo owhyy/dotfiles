@@ -17,3 +17,11 @@ vim.cmd("command! HelpTags Telescope help_tags")
 
 -- fpc complier autorun
 vim.cmd [[autocmd BufWritePost *.pas :FPC]]
+
+-- highlight yanked text
+vim.cmd[[
+augroup highlight_yank
+    autocmd!
+    au TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=500}
+augroup END
+]]
