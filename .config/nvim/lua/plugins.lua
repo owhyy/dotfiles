@@ -154,6 +154,9 @@ return require('packer').startup(function(use)
     -- autopairs
     use 'windwp/nvim-autopairs'
     require('nvim-autopairs').setup {}
+    -- zettelkasetn
+    use ("mickael-menu/zk-nvim")
+    require("zk").setup {}
 
     if packer_bootstrap then require('packer').sync() end
 end)

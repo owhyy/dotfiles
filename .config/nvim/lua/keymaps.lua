@@ -51,13 +51,18 @@ vnoremap("<leader>p", '"+p')
 nnoremap("<leader>ff", "<Cmd>Telescope find_files<CR>")
 nnoremap("<leader>fb", "<Cmd>Telescope buffers<CR>")
 nnoremap("<leader>fg", "<Cmd>Telescope live_grep<CR>")
+nnoremap("<leader>fz", "<Cmd>Telescope zk notes<CR>")
 
 -- File explorer
 nnoremap("<leader>e", "<Cmd>NvimTreeToggle<CR>") -- NvimTree
+
+-- Debugging shortcuts
 nnoremap("<leader>dn", ":lua require('dap-python').test_method()<CR>")
 nnoremap("<leader>df", ":lua require('dap-python').test_class()<CR>")
 nnoremap("<leader>ds", ":lua require('dap-python').debug_selection()<CR>")
 
+-- Tab tmux-like zooming
+nnoremap("<c-w>t", ":tabe %<CR>")
 -- EasyAlign
 -- xmap("ga", "<cmd>EasyAlign")
 -- nmap("ga", "<cmd>EasyAlign")
