@@ -1,8 +1,8 @@
 require('lualine').setup {
     options = {
         icons_enabled = true,
-        -- theme = 'no-clown-fiesta',
-        theme = 'ayu_dark',
+        -- theme = 'ayu_dark',
+        theme = 'zenburn',
         component_separators = {left = '|', right = '|'},
         section_separators = {left = '', right = ''},
         disabled_filetypes = {},

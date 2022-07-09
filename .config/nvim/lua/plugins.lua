@@ -46,7 +46,8 @@ return require('packer').startup(function(use)
     use 'mfussenegger/nvim-jdtls' -- java lsp
 
     -- Autocomplete
-    use "L3MON4D3/LuaSnip" -- Snippet engine
+    use({"L3MON4D3/LuaSnip", config = function() require('plugins.luasnip') end}) -- Snippet engine
+
     use({
         "hrsh7th/nvim-cmp",
         -- Sources for nvim-cmp
@@ -99,19 +100,11 @@ return require('packer').startup(function(use)
         tag = 'nightly' -- optional, updated every week. (see issue #1193)
     }
     -- Colorthemes
-    -- use 'shaunsingh/solarized.nvim'
-    -- Black colortheme
-    -- use 'aditya-azad/candle-grey'
-    -- use { "adisen99/codeschool.nvim", requires = { "rktjmp/lush.nvim" } }
-    -- zenburn
     use 'phha/zenburn.nvim'
-    -- black colortheme
     use 'mrjones2014/lighthaus.nvim'
-    -- highlightedyank
-    use 'machakann/vim-highlightedyank'
-    -- smooth scrolling
-    use 'karb94/neoscroll.nvim'
-    require('neoscroll').setup()
+    use 'Shatur/neovim-ayu'
+    use 'aktersnurra/no-clown-fiesta.nvim'
+    use 'folke/tokyonight.nvim'
 
     -- Pascal linter
     use 'dylanaraps/pascal_lint.nvim'
@@ -121,18 +114,11 @@ return require('packer').startup(function(use)
     use 'jez/vim-better-sml'
     -- Pyret support
     use 'rachitnigam/pyret-lang.vim'
-    -- black colorthemes
-    use 'mrjones2014/lighthaus.nvim'
-    use 'Shatur/neovim-ayu'
-    use 'aktersnurra/no-clown-fiesta.nvim'
-    use 'morhetz/gruvbox'
     -- Indent lines
     use {
         'lukas-reineke/indent-blankline.nvim',
         config = function() require('plugins.indent-blankline') end
     }
-    -- highlightedyank
-    use 'machakann/vim-highlightedyank'
     -- smooth scrolling
     use 'karb94/neoscroll.nvim'
     require('neoscroll').setup()
@@ -164,5 +150,15 @@ return require('packer').startup(function(use)
         'mfussenegger/nvim-dap',
         config = function() require('plugins.dapconfig') end
     }
+
+    -- autopairs
+    use 'windwp/nvim-autopairs'
+    require('nvim-autopairs').setup({
+        disable_filetype = {"TelescopePrompt", "markdown"}
+    })
+    -- zettelkasetn
+    use("mickael-menu/zk-nvim")
+    require("zk").setup {}
+
     if packer_bootstrap then require('packer').sync() end
 end)
