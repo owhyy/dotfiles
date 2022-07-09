@@ -153,9 +153,11 @@ return require('packer').startup(function(use)
 
     -- autopairs
     use 'windwp/nvim-autopairs'
-    require('nvim-autopairs').setup {}
+    require('nvim-autopairs').setup({
+        disable_filetype = {"TelescopePrompt", "markdown"}
+    })
     -- zettelkasetn
-    use ("mickael-menu/zk-nvim")
+    use("mickael-menu/zk-nvim")
     require("zk").setup {}
 
     if packer_bootstrap then require('packer').sync() end
