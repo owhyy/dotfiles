@@ -42,4 +42,5 @@ source /usr/share/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme 2>/dev/null
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 # do paru -S autojump before
 [[ -s /etc/profile.d/autojump.zsh ]] && source /etc/profile.d/autojump.zsh
+compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
 autoload -U compinit && compinit -u
