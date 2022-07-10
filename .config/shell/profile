@@ -27,10 +27,12 @@ export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 export PYTHONSTARTUP="${XDG_CONFIG_HOME}/python/pythonrc"
 export HISTFILE="$XDG_STATE_HOME"/zsh/history
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
-
-# Other program settings
+export REDISCLI_HISTFILE="$XDG_DATA_HOME"/redis/rediscli_history
+export PSQL_HISTORY="$XDG_DATA_HOME/psql_history"
+export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
 export AWT_TOOLKIT="MToolkit wmname LG3D"	# May have to install wmname
 export _JAVA_AWT_WM_NONREPARENTING=1	# Fix for Java applications in dwm
+export ANDROID_HOME="$XDG_DATA_HOME"/android
 
 export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
 export PATH=/home/snooze/.cargo/bin:$PATH
