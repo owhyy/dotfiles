@@ -12,6 +12,7 @@ export EDITOR="nvim"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
 
 export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority # I don't use a DM, but it may break if you use one
 export OPAMROOT="$XDG_DATA_HOME/opam"
@@ -22,6 +23,10 @@ export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export SOLARGRAPH_CACHE="$XDG_CACHE_HOME/solargraph"
 export ZK_NOTEBOOK_DIR="$HOME/notes"
+export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+export PYTHONSTARTUP="${XDG_CONFIG_HOME}/python/pythonrc"
+export HISTFILE="$XDG_STATE_HOME"/zsh/history
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
 
 # Other program settings
 export AWT_TOOLKIT="MToolkit wmname LG3D"	# May have to install wmname
