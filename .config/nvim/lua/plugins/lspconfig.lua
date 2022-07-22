@@ -15,7 +15,7 @@ for _, lsp in ipairs(servers) do
   })
 end
 
--- require('lsp.python-lsp')
+require('lsp.python-lsp')
 require('lsp.java-lsp')
 require('lsp.sumneko')
 require('lsp.ruby-ls')
