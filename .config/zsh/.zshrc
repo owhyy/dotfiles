@@ -9,10 +9,12 @@ fi
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc"
 #[[ -s /home/snooze/.autojump/etc/profile.d/autojump.sh ]] && source /home/snooze/.autojump/etc/profile.d/autojump.sh
 
-# Book finding script
+# Open lf
 bindkey -s '^o' 'lfrun \n'
-bindkey -s '^b' 'zathura "$( find ~/Documents/books -iname "*.pdf" -o -iname "*.djvu" -o -iname "*.epub" | fzf)" \n'
-# bindkey -s '^f' 'tmux-sessionizer \n'
+# Book finding script
+bindkey -s '^b' 'find-books \n'
+# Open most used projects in new tmux session
+bindkey -s '^t' 'tmux-sessionizer \n'
 
 
 # History in cache directory:
