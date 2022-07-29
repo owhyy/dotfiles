@@ -9,10 +9,12 @@ fi
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc"
 #[[ -s /home/snooze/.autojump/etc/profile.d/autojump.sh ]] && source /home/snooze/.autojump/etc/profile.d/autojump.sh
 
-# Book finding script
+# Open lf
 bindkey -s '^o' 'lfrun \n'
-bindkey -s '^b' 'zathura "$( find ~/Documents/books -iname "*.pdf" -o -iname "*.djvu" -o -iname "*.epub" | fzf)" \n'
-# bindkey -s '^f' 'tmux-sessionizer \n'
+# Book finding script
+bindkey -s '^b' 'find-books \n'
+# Open most used projects in new tmux session
+bindkey -s '^t' 'tmux-sessionizer \n'
 
 
 # History in cache directory:
@@ -42,4 +44,5 @@ source /usr/share/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme 2>/dev/null
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 # do paru -S autojump before
 [[ -s /etc/profile.d/autojump.zsh ]] && source /etc/profile.d/autojump.zsh
+compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
 autoload -U compinit && compinit -u

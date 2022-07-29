@@ -60,6 +60,52 @@ return require('packer').startup(function(use)
         config = function() require('plugins.cmp') end
     })
 
+    -- NvimTree
+    use({
+        'kyazdani42/nvim-tree.lua',
+        requires = 'kyazdani42/nvim-web-devicons',
+        config = function() require('plugins.nvimtree') end -- Must add this manually
+    })
+
+    -- Treesitter
+    use({
+        'nvim-treesitter/nvim-treesitter',
+        config = function() require('plugins.treesitter') end,
+        run = ':TSUpdate'
+    })
+
+    -- Telescope
+    use({
+        'nvim-telescope/telescope.nvim',
+        requires = {{'nvim-lua/plenary.nvim'}},
+        config = function() require('plugins.telescope') end
+    })
+
+    use({'nvim-telescope/telescope-fzf-native.nvim', run = 'make'})
+    use 'p00f/nvim-ts-rainbow'
+
+    -- Latex
+    use "lervag/vimtex"
+
+    -- Better movement
+    use "ggandor/lightspeed.nvim"
+    -- Bracket thing
+    use "tpope/vim-surround"
+    -- Statusline
+    use({
+        "nvim-lualine/lualine.nvim",
+        config = function() require('plugins.lualine') end
+    })
+
+    -- Colorthemes
+    -- use 'shaunsingh/solarized.nvim'
+    -- Black colortheme
+    -- use 'aditya-azad/candle-grey'
+    -- use { "adisen99/codeschool.nvim", requires = { "rktjmp/lush.nvim" } }
+    -- zenburn
+    use 'phha/zenburn.nvim'
+    -- black colortheme
+    use 'mrjones2014/lighthaus.nvim'
     -- Treesitter
     use({
         'nvim-treesitter/nvim-treesitter',
@@ -160,5 +206,12 @@ return require('packer').startup(function(use)
     use("mickael-menu/zk-nvim")
     require("zk").setup {}
 
+    use('norcalli/nvim-colorizer.lua')
+    require('colorizer').setup()
     if packer_bootstrap then require('packer').sync() end
+
+    use {
+        "folke/which-key.nvim",
+        config = function() require("which-key").setup {} end
+    }
 end)

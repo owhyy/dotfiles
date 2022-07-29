@@ -25,7 +25,9 @@ alias \
   ...='cd ../..' \
   ....='cd ../../..' \
   .....='cd ../../../..' \
-  ......='cd ../../../../..'
+  ......='cd ../../../../..' \
+  venv='source venv/bin/activate' \
+  yarn --use-yarnrc $XDG_CONFIG_HOME/yarn/config
 
 # List directory contents
 alias ll='ls -lh'
@@ -51,6 +53,7 @@ alias \
 
 # Git
 alias \
+  ga='git add' \
   gcmsg='git commit -m' \
   gs='git status' \
   gpull='git pull' \
