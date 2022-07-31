@@ -1,4 +1,5 @@
 require('dap-python').setup('~/.local/lib/python3.10/venv/bin/python')
+require('dap-python').test_runner = 'pytest'
 
 vim.keymap.set("n", "<F2>", ":lua require'dap'.step_into()<CR>")
 vim.keymap.set("n", "<F3>", ":lua require'dap'.step_over()<CR>")

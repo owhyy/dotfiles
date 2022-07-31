@@ -1,6 +1,6 @@
 -- Visual
 vim.o.conceallevel = 0 -- Don't hide quotes in markdown
-vim.o.cmdheight = 0
+-- vim.o.cmdheight = 0
 vim.o.pumheight = 10
 vim.o.showmode = false
 vim.wo.number = true
@@ -41,7 +41,7 @@ vim.cmd [[
 ]]
 
 vim.cmd [[
-  let g:neoformat_enabled_python = ['black']
+  let g:neoformat_enabled_python = ['blue']
 ]]
 
 vim.cmd [[filetype plugin on]]

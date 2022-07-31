@@ -12,14 +12,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
     })
 end
 
--- Rerun PackerCompile everytime pluggins.lua is updated
-cmd([[
-augroup packer_user_config
-autocmd!
-autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-augroup end
-]])
-
 -- Load Packer
 cmd([[packadd packer.nvim]])
 
@@ -97,15 +89,6 @@ return require('packer').startup(function(use)
         config = function() require('plugins.lualine') end
     })
 
-    -- Colorthemes
-    -- use 'shaunsingh/solarized.nvim'
-    -- Black colortheme
-    -- use 'aditya-azad/candle-grey'
-    -- use { "adisen99/codeschool.nvim", requires = { "rktjmp/lush.nvim" } }
-    -- zenburn
-    use 'phha/zenburn.nvim'
-    -- black colortheme
-    use 'mrjones2014/lighthaus.nvim'
     -- Treesitter
     use({
         'nvim-treesitter/nvim-treesitter',
@@ -175,9 +158,6 @@ return require('packer').startup(function(use)
     -- Diagnostics window
     use 'folke/trouble.nvim'
 
-    -- Make statusline and tmux's statusline be the same
-    -- use 'vimpostor/vim-tpipeline'
-    -- use 'edkolev/tmuxline.vim'
     -- Python text objects
     use 'jeetsukumaran/vim-pythonsense'
 
@@ -214,4 +194,9 @@ return require('packer').startup(function(use)
         "folke/which-key.nvim",
         config = function() require("which-key").setup {} end
     }
+    use {
+        "mhartington/formatter.nvim",
+        config = function() require('plugins.formatter') end
+    }
+
 end)
