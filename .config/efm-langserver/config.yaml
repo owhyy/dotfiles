@@ -1,0 +1,34 @@
+root-markers:
+  - .git/
+
+tools:
+  yamllint: &yamllint
+    lint-command: "yamllint -f parsable -"
+    lint-stdin: true
+
+  python-flake8: &python-flake8
+    lint-command: "flake8 --stdin-display-name ${INPUT} -"
+    lint-stdin: true
+    lint-formats:
+      - "%f:%l:%c: %m"
+
+  python-pylint: &python-pylint
+    lint-command: "pylint --output-format text --score no --msg-template {path}:{line}:{column}:{C}:{msg} ${INPUT}"
+    lint-stdin: false
+    lint-formats:
+      - "%f:%l:%c:%t:%m"
+    lint-offset-columns: 1
+    lint-category-map:
+      I: H
+      R: I
+      C: I
+      W: W
+      E: E
+      F: E
+
+languages:
+  python:
+    # - <<: *python-flake8
+    # - <<: *python-pylint
+  yaml:
+    - <<: *yamllint

@@ -15,8 +15,10 @@ static const unsigned int gappiv    = 10;       /* vert inner gap between window
 static const unsigned int gappoh    = 10;       /* horiz outer gap between windows and screen edge */
 static const unsigned int gappov    = 30;       /* vert outer gap between windows and screen edge */
 static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
-static const char *fonts[]          = { "Iosevka Term,Iosevka Nerd Font Mono:pixelsize=14:style=Regular:autohint=true" };
-static const char dmenufont[]       = "Iosevka Term,Iosevka Nerd Font Mono:pixelsize=14:style=Regular:autohint=true";
+// static const char *fonts[]          = { "Iosevka Term,Iosevka Nerd Font Mono:pixelsize=14:style=Regular:autohint=true" };
+static const char *fonts[]          = { "monospace:pixelsize=14" };
+static const char dmenufont[]          = "monospace:pixelsize=14";
+// static const char dmenufont[]       = "Iosevka Term,Iosevka Nerd Font Mono:pixelsize=14:style=Regular:autohint=true";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";

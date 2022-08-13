@@ -5,9 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-//static char *font = "LiterationMono Nerd Font Mono:pixelsize=12:antialias=true:autohint=true";
-//static char *font = "mononoki Nerd Font Mono:pixelsize=12:antialias=true:autohint=true";
-static char *font = "Iosevka Term,Iosevka Nerd Font Mono:pixelsize=14:style=Regular:autohint=true";
+static char *font = "monospace:pixelsize=14:antialias=true:autohint=true";
+static char *font2[] = { "NotoColorEmoji:pixelsize=12:antialias=true:autohint=true" };
 
 static int borderpx = 1;
 
