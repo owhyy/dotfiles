@@ -10,6 +10,7 @@ vim.cmd('command! CleanSwap !rm -rf ~/.local/share/nvim/swap/')
 
 -- Open help tags
 vim.cmd("command! HelpTags Telescope help_tags")
+vim.cmd('syntax enable')
 
 -- autocompile dwm and dwmblocks when saving (not working for some reason :( )
 -- vim.cmd [[autocmd BufWritePost ~/.local/src/dwm/config.h !cd ~/.local/src/dwm/; sudo make install && {killall -q dwm;setsid -f dwm}]]
