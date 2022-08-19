@@ -18,7 +18,7 @@ vim.o.softtabstop = 2
 vim.o.shiftwidth = 2
 vim.o.splitbelow = true
 vim.o.splitright = true
-vim.o.mouse = 'a'
+vim.o.mouse = "a"
 vim.o.clipboard = "unnamedplus"
 
 -- Vim specific
@@ -28,26 +28,53 @@ vim.o.spell = false
 vim.o.spelllang = "en_us"
 vim.o.completeopt = "menuone,noinsert,noselect"
 vim.o.wildmode = "longest,full" -- Display auto-complete in Command Mode
--- vim.o.updatetime         = 300                           -- Delay until write to Swap and HoldCommand event
 
 -- Disable default plugins
 -- vim.g.loaded_netrwPlugin = false
 
--- Providers
--- vim.g.python3_host_prog  = '/home/milton/software/miniconda/envs/pynvim/bin/python'
+-- Python providers
+local pynvim_env = "/.local/share/pyenv/versions/pynvim"
+vim.g.python3_host_prog = os.getenv("HOME") .. pynvim_env .. "/bin/python"
 
-vim.cmd [[
+vim.cmd([[
   let g:vimtex_view_method = 'zathura'
-]]
+]])
 
-vim.cmd [[
+vim.cmd([[
   let g:neoformat_enabled_python = ['blue']
-]]
+]])
 
-vim.cmd [[filetype plugin on]]
+vim.cmd([[filetype plugin on]])
 
 -- Disable inline error messages
-vim.diagnostic.config {
-    virtual_text = true,
-    underline = false -- Keep error underline
+vim.diagnostic.config({
+	virtual_text = false,
+	underline = false,
+	signs = true,
+})
+
+-- disable built-in plugins that I don't use
+local disabled_built_ins = {
+	"netrw",
+	"netrwPlugin",
+	"netrwSettings",
+	"netrwFileHandlers",
+	"gzip",
+	"zip",
+	"zipPlugin",
+	"tar",
+	"tarPlugin",
+	"getscript",
+	"getscriptPlugin",
+	"vimball",
+	"vimballPlugin",
+	"2html_plugin",
+	"logipat",
+	"rrhelper",
+	"spellfile_plugin",
+	"matchit",
 }
+
+for _, plugin in pairs(disabled_built_ins) do
+	vim.g["loaded" .. plugin] = 1
+end

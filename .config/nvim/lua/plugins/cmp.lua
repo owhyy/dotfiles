@@ -1,26 +1,15 @@
-local fn = vim.fn
-
 -- local Utils = require('utils')
 local luasnip = require("luasnip")
 local cmp = require("cmp")
 
 -- local exprinoremap = Utils.exprinoremap
 
-local function get_snippets_rtp()
-	return vim.tbl_map(function(itm)
-		return fn.fnamemodify(itm, ":h")
-	end, vim.api.nvim_get_runtime_file("package.json", true))
-end
-
-local opts = {
-	paths = {
-		fn.stdpath("config") .. "/snippets/",
-		get_snippets_rtp()[1],
-	},
-}
-
 require("luasnip.loaders.from_vscode").lazy_load()
+-- I only use racket snippets from snipmate, which are not
+-- available in friendly-snippets.
 require("luasnip.loaders.from_snipmate").lazy_load({ include = { "racket" } })
+-- Ideally, sometimes in the future I will migrate those to
+-- json syntax...
 require("luasnip.loaders.from_snipmate").lazy_load({ paths = { "./snippets" } })
 
 luasnip.filetype_extend("python", { "django", "django-rest" })
@@ -31,7 +20,7 @@ cmp.setup({
 	-- completion = {autocomplete = { false },},
 
 	-- Don't preselect an option
-	-- preselect = cmp.PreselectMode.None,
+	preselect = cmp.PreselectMode.None,
 
 	-- Snippet engine, required
 	snippet = {
@@ -43,7 +32,7 @@ cmp.setup({
 	-- Mappings
 	mapping = {
 		-- open/close autocomplete
-		["<C-Space>"] = function(fallback)
+		["<C-Space>"] = function()
 			if cmp.visible() then
 				cmp.close()
 			else
@@ -136,7 +125,7 @@ cmp.setup({
 	},
 
 	experimental = {
-		native_menu = false,
+		-- native_menu = false,
 		ghost_text = false,
 	},
 })

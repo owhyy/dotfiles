@@ -29,7 +29,6 @@ return require("packer").startup(function(use)
 			require("Comment").setup()
 		end,
 	})
-	-- use("junegunn/vim-easy-align")
 
 	-- LSP server
 	use({
@@ -40,18 +39,6 @@ return require("packer").startup(function(use)
 	})
 	-- Helper for installing most language servers
 	use("williamboman/nvim-lsp-installer")
-	-- Beautiful UI for LSP
-	-- use({
-	-- 	"glepnir/lspsaga.nvim",
-	-- 	branch = "main",
-	-- 	config = function()
-	-- 		local saga = require("lspsaga")
-	--
-	-- 		-- saga.init_lsp_saga({
-	-- 		-- 	-- your configuration
-	-- 		-- })
-	-- 	end,
-	-- })
 
 	-- Snippets
 	use({
@@ -123,23 +110,11 @@ return require("packer").startup(function(use)
 	})
 	use("nvim-telescope/telescope-dap.nvim")
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
-	use("nvim-telescope/telescope-dap.nvim")
 	use("nvim-telescope/telescope-file-browser.nvim")
 
 	-- Latex
 	use("lervag/vimtex")
 
-	-- Tree
-	use({
-		"kyazdani42/nvim-tree.lua",
-		config = function()
-			require("plugins.nvimtree")
-		end,
-		requires = {
-			"kyazdani42/nvim-web-devicons", -- optional, for file icons
-		},
-		tag = "nightly", -- optional, updated every week. (see issue #1193)
-	})
 	-- Colorthemes
 	use("phha/zenburn.nvim")
 	use("mrjones2014/lighthaus.nvim")
@@ -179,7 +154,7 @@ return require("packer").startup(function(use)
 
 	-- -- ctags
 	-- use("quangnguyen30192/cmp-nvim-tags")
-	-- use("ludovicchabant/vim-gutentags")
+	use("ludovicchabant/vim-gutentags")
 
 	-- debugger
 	use("rcarriga/nvim-dap-ui")
@@ -225,6 +200,8 @@ return require("packer").startup(function(use)
 		end,
 	})
 
+	use("glepnir/lspsaga.nvim")
+	use("lewis6991/impatient.nvim")
 	if packer_bootstrap then
 		require("packer").sync()
 	end

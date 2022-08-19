@@ -47,14 +47,6 @@ nnoremap("<A-w>", ":bd<CR>")
 -- Yank to end of line
 nnoremap("Y", "y$")
 
--- Copy to system clippboard
-nnoremap("<leader>y", '"+y')
-vnoremap("<leader>y", '"+y')
-
--- Paste from system clippboard
-nnoremap("<leader>p", '"+p')
-vnoremap("<leader>p", '"+p')
-
 -- Telescope
 nnoremap("<leader>ff", "<Cmd>Telescope find_files<CR>")
 nnoremap("<leader>ft", "<Cmd>Telescope buffers<CR>")
@@ -86,4 +78,4 @@ vim.keymap.set("n", "<Left>", function()
 	vim.api.nvim_feedkeys("gT", "n", true)
 end)
 
-
+nnoremap("<M-CR>", "<cmd>Lspsaga code_action<CR>", { silent = true })

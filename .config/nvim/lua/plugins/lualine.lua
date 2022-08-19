@@ -3,6 +3,7 @@ require('lualine').setup {
         icons_enabled = true,
         -- theme = 'ayu_dark',
         -- theme = 'zenburn',
+        globalstatus = true,
         theme = 'kanagawa',
         component_separators = {left = '|', right = '|'},
         section_separators = {left = '', right = ''},

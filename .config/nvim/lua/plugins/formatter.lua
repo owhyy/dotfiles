@@ -4,15 +4,21 @@ require("formatter").setup({
 	filetype = {
 		lua = { require("formatter.filetypes.lua").stylua },
 		python = {
+			-- function()
+			-- 	return { exe = "blue", args = { "-", "-l 96" }, stdin = true }
+			-- end,
 			function()
-				return { exe = "blue", args = { "-", "-l 96"}, stdin = true }
+				return { exe = "black", args = { "-" }, stdin = true }
 			end,
-			require("formatter.filetypes.python").autopep8,
 			require("formatter.filetypes.python").isort,
 		},
 		json = { require("formatter.filetypes.json").prettier },
 		markdown = { require("formatter.filetypes.markdown").prettier },
 		yaml = { require("formatter.filetypes.yaml").prettier },
+		sh = { require("formatter.filetypes.sh").shfmt },
+		c = {
+			require("formatter.filetypes.c").clangformat,
+		},
 		racket = {
 			function()
 				return { exe = "raco fmt", args = { "-i" }, stdin = true }
