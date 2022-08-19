@@ -35,6 +35,12 @@ bindkey -s '^f' '^ucd "$(dirname "$(fzf)")"\n'
 
 # Sources
 [[ ! -r /home/snooze/.opam/opam-init/init.zsh ]] || source /home/snooze/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+# Pyenv
+export PYENV_ROOT="$XDG_DATA_HOME"/pyenv
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh 2>/dev/null
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh 2>/dev/null
 source /usr/share/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme 2>/dev/null

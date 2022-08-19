@@ -6,10 +6,17 @@ xset -dpms
 xset s off
 sudo ntpd -qg
 autostart="mpd unclutter pipewire remaps"
+xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/x11/xresources & xrdbpid=$!
+# initialize environments automatically
 eval $(opam env)
 eval "$(rbenv init -)"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 xbanish &
 
 for program in $autostart; do
 	pidof -s "$program" || setsid -f "$program"
 done >/dev/null 2>&1
+
+[ -n "$xrdbpid" ] && wait "$xrdbpid"
+feh --bg-scale ~/.config/wallpaper.jpg
