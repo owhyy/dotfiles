@@ -13,7 +13,7 @@ tools:
       - "%f:%l:%c: %m"
 
   python-pylint: &python-pylint
-    lint-command: "pylint --output-format text --score no --msg-template {path}:{line}:{column}:{C}:{msg} ${INPUT}"
+    lint-command: "pylint --output-format text --score no --msg-template {path}:{line}:{column}:{C}:{msg} ${INPUT} --load-plugins pylint_django"
     lint-stdin: false
     lint-formats:
       - "%f:%l:%c:%t:%m"
@@ -25,6 +25,8 @@ tools:
       W: W
       E: E
       F: E
+  clang-tidy: &clang-tidy
+    lint-command: "clang-tidy"
 
 languages:
   python:
@@ -32,3 +34,5 @@ languages:
     # - <<: *python-pylint
   yaml:
     - <<: *yamllint
+  c:
+    - <<: *clang-tidy
