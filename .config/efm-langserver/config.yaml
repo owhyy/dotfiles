@@ -1,3 +1,4 @@
+---
 root-markers:
   - .git/
 
@@ -12,26 +13,20 @@ tools:
     lint-formats:
       - "%f:%l:%c: %m"
 
-  python-pylint: &python-pylint
-    lint-command: "pylint --output-format text --score no --msg-template {path}:{line}:{column}:{C}:{msg} ${INPUT} --load-plugins pylint_django"
-    lint-stdin: false
+  python-mypy: &python-mypy
+    lint-command: "mypy --strict --show-column-numbers"
     lint-formats:
-      - "%f:%l:%c:%t:%m"
-    lint-offset-columns: 1
-    lint-category-map:
-      I: H
-      R: I
-      C: I
-      W: W
-      E: E
-      F: E
+      - "%f:%l:%c: %trror: %m"
+      - "%f:%l:%c: %tarning: %m"
+      - "%f:%l:%c: %tote: %m"
+
   clang-tidy: &clang-tidy
     lint-command: "clang-tidy"
 
 languages:
   python:
-    # - <<: *python-flake8
-    # - <<: *python-pylint
+    - <<: *python-flake8
+    - <<: *python-mypy
   yaml:
     - <<: *yamllint
   c:
