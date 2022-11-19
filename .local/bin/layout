@@ -1,2 +1,17 @@
 #!/bin/sh
-echo "$(setxkbmap -query | grep -oP 'layout:\s*\K\w+')" || exit 1
+
+layout="$(setxkbmap -query | grep -oP 'layout:\s*\K\w+')"
+
+case "$layout" in
+"ro")
+  flag=🇷🇴
+  ;;
+"us")
+  flag=🇬🇧
+  ;;
+*)
+  flag="FU"
+  ;;
+esac
+
+printf "$flag"

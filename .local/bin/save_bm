@@ -1,0 +1,7 @@
+#!/bin/bash
+
+bookmark="$(xclip -o)"
+file="$HOME/.local/share/bookmark"
+
+echo $bookmark >>$file
+notify-send "Saved $bookmark" -t 2000
