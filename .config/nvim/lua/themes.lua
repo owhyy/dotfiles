@@ -1,10 +1,7 @@
 vim.opt.termguicolors = true
 
--- require('ayu').setup({
---     mirage = false, -- Set to `true` to use `mirage` variant instead of `dark` for dark background.
--- })
--- require('ayu').colorscheme()
-
--- vim.cmd[[colorscheme zenburn]]
-
+-- dark
 vim.cmd("colorscheme kanagawa")
+-- light
+-- vim.cmd("set background=light")
+-- vim.cmd("colorscheme PaperColor")

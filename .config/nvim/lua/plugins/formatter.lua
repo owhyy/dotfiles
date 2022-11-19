@@ -8,7 +8,7 @@ require("formatter").setup({
 			-- 	return { exe = "blue", args = { "-", "-l 96" }, stdin = true }
 			-- end,
 			function()
-				return { exe = "black", args = { "-" }, stdin = true }
+				return { exe = "black", args = { "-", "-l 88" }, stdin = true }
 			end,
 			require("formatter.filetypes.python").isort,
 		},
@@ -25,5 +25,19 @@ require("formatter").setup({
 			end,
 		},
 		["*"] = { require("formatter.filetypes.any").remove_trailing_whitespace },
+		sql = {
+			function()
+				return { exe = "sqlformat", args = { "-" }, stdin = true }
+			end,
+		},
+		html = {
+			require("formatter.filetypes.html").prettier,
+		},
+		latex = {
+			require("formatter.filetypes.latex").latexindent,
+		},
+		javascript = {
+			require("formatter.filetypes.javascript").prettier,
+		},
 	},
 })

@@ -17,7 +17,7 @@ end
 -- Load Packer
 cmd([[packadd packer.nvim]])
 
--- Initialize pluggins
+-- Initialize plugins
 return require("packer").startup(function(use)
 	-- Let Packer manage itself
 	use({ "wbthomason/packer.nvim", opt = true })
@@ -89,9 +89,17 @@ return require("packer").startup(function(use)
 	use("nvim-treesitter/nvim-treesitter-textobjects")
 
 	-- Better movement
-	use("ggandor/lightspeed.nvim")
+	use("ggandor/leap.nvim")
+	require("leap").add_default_mappings()
 	-- Bracket thing
-	use("tpope/vim-surround")
+	use({
+		"kylechui/nvim-surround",
+		config = function()
+			require("nvim-surround").setup({
+				-- Configuration here, or leave empty to use defaults
+			})
+		end,
+	})
 	-- Statusline
 	use({
 		"nvim-lualine/lualine.nvim",
@@ -110,19 +118,17 @@ return require("packer").startup(function(use)
 	})
 	use("nvim-telescope/telescope-dap.nvim")
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
-	use("nvim-telescope/telescope-file-browser.nvim")
 
 	-- Latex
 	use("lervag/vimtex")
 
 	-- Colorthemes
-	use("phha/zenburn.nvim")
-	use("mrjones2014/lighthaus.nvim")
-	use("Shatur/neovim-ayu")
-	use("aktersnurra/no-clown-fiesta.nvim")
-	use("folke/tokyonight.nvim")
+	-- dark
 	use("rebelot/kanagawa.nvim")
+	-- light
+	use("pappasam/papercolor-theme-slim")
 	use("NLKNguyen/papercolor-theme")
+	use("ishan9299/modus-theme-vim")
 
 	-- Pascal linter
 	use("dylanaraps/pascal_lint.nvim")
@@ -202,6 +208,12 @@ return require("packer").startup(function(use)
 
 	use("glepnir/lspsaga.nvim")
 	use("lewis6991/impatient.nvim")
+
+	use("nanotee/sqls.nvim")
+	use("jpalardy/vim-slime")
+	use("iamcco/markdown-preview.nvim")
+	use("tpope/vim-dotenv")
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end

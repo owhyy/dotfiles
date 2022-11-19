@@ -1,6 +1,8 @@
 snippet fun "fun ... end (fun)"
-	fun ${1:function_name}(${2:arguments}):
+	fun ${1:function_name}(${2:arguments} :: ${3:arg_type}) -> ${4: ret_type}:
 		${VISUAL}$0
+	where:
+		${5:test_case}
 	end
 
 snippet meth "method ... end (meth)"

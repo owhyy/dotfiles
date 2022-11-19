@@ -22,16 +22,14 @@ nnoremap("<C-k>", "<C-w>k")
 nnoremap("<C-l>", "<C-w>l")
 
 -- Sizing window horizontally
-nnoremap("<C-,>", "<C-W><")
-nnoremap("<C-.>", "<C-W>>")
-nnoremap("<A-,>", "<C-W>5<")
-nnoremap("<A-.>", "<C-W>5>")
+nnoremap("<A-h>", "<C-W>>")
+nnoremap("<A-l>", "<C-W><")
 
 -- Sizing window vertically
 -- taller
-nnoremap("<A-t>", "<C-W>+")
+nnoremap("<A-j>", "<C-W>+")
 -- shorter
-nnoremap("<A-s>", "<C-W>-")
+nnoremap("<A-k>", "<C-W>-")
 
 -- Splits
 nnoremap("<leader>ws", ":split<CR>")
@@ -49,8 +47,7 @@ nnoremap("Y", "y$")
 
 -- Telescope
 nnoremap("<leader>ff", "<Cmd>Telescope find_files<CR>")
-nnoremap("<leader>ft", "<Cmd>Telescope buffers<CR>")
-nnoremap("<leader>fb", "<Cmd>Telescope file_browser<CR>")
+nnoremap("<leader>fb", "<Cmd>Telescope buffers<CR>")
 nnoremap("<leader>fg", "<Cmd>Telescope live_grep<CR>")
 nnoremap("<leader>fz", "<Cmd>Telescope zk notes<CR>")
 
@@ -79,3 +76,5 @@ vim.keymap.set("n", "<Left>", function()
 end)
 
 nnoremap("<M-CR>", "<cmd>Lspsaga code_action<CR>", { silent = true })
+
+-- Remove x from leap.nvim

@@ -15,12 +15,18 @@ bindkey -s '^o' 'lfrun \n'
 bindkey -s '^b' 'find-books \n'
 # Open most used projects in new tmux session
 bindkey -s '^t' 'tmux-sessionizer \n'
-
+# FZF in history
+bindkey -s '^r' 'histfzf \n'
 
 # History in cache directory:
 HISTSIZE=10000000
 SAVEHIST=10000000
 HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history"
+# Share history accross tmux panes, ignore duplicates and
+# empty commands
+setopt inc_append_history
+setopt hist_ignore_dups
+setopt hist_ignore_space
 
 # Basic auto/tab complete:
 autoload -U compinit

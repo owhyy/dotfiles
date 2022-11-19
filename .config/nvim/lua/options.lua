@@ -78,3 +78,9 @@ local disabled_built_ins = {
 for _, plugin in pairs(disabled_built_ins) do
 	vim.g["loaded" .. plugin] = 1
 end
+
+-- disables builtin sql syntax autocomplete
+-- vim.cmd("let g:omni_sql_default_compl_type = 'syntax'")
+
+-- slime
+vim.cmd("let g:slime_target = 'tmux'")

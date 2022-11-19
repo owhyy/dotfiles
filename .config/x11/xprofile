@@ -20,3 +20,4 @@ done >/dev/null 2>&1
 
 [ -n "$xrdbpid" ] && wait "$xrdbpid"
 feh --bg-scale ~/.config/wallpaper.jpg
+. /home/snooze/.nix-profile/etc/profile.d/nix.sh

@@ -92,7 +92,7 @@ cmp.setup({
 		{ name = "path" },
 		{ name = "buffer" },
 		{ name = "nvim_lsp_signature_help" },
-		{ name = "omni" },
+		-- { name = "omni" },
 		-- { name = "tags" },
 		-- {name = 'calc'},
 	},

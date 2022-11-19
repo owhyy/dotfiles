@@ -4,7 +4,7 @@ local utils = require("lsp.utils")
 local common_on_attach = utils.common_on_attach
 
 -- add capabilities from nvim-cmp
-local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- Enable language servers with common settings
 local servers = {
@@ -12,7 +12,6 @@ local servers = {
 	"clangd",
 	"pyright",
 	"texlab",
-	"jdtls",
 	"ocamllsp",
 	"racket_langserver",
 	"pasls",
@@ -26,6 +25,7 @@ local servers = {
 	"html",
 	"emmet_ls",
 	"graphql",
+  "sqls",
 }
 for _, lsp in ipairs(servers) do
 	nvim_lsp[lsp].setup({
@@ -35,9 +35,8 @@ for _, lsp in ipairs(servers) do
 end
 
 require("lspconfig").efm.setup({})
-require("lsp.java-lsp")
-require("lsp.sumneko")
-require("lsp.ruby-ls")
+require("lsp.lua-lsp")
+require("lsp.ruby-lsp")
 require("lsp.ocaml-lsp")
 require("lsp.racket-lsp")
 require("lsp.javascript-lsp")

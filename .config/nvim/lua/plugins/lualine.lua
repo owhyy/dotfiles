@@ -1,10 +1,9 @@
 require('lualine').setup {
     options = {
         icons_enabled = true,
-        -- theme = 'ayu_dark',
-        -- theme = 'zenburn',
         globalstatus = true,
         theme = 'kanagawa',
+        -- theme = 'PaperColor',
         component_separators = {left = '|', right = '|'},
         section_separators = {left = '', right = ''},
         disabled_filetypes = {},

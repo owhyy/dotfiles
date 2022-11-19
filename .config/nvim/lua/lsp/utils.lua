@@ -4,8 +4,8 @@ local M = {}
 
 -- This function defines the on_attach function for several languages which share the same key-bidings
 function M.common_on_attach(client, bufnr)
-	-- Set omnifunc
-	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+	-- -- Set omnifunc
+	-- vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
 	-- Helper function
 	local opts = { noremap = true, silent = true }
@@ -28,7 +28,7 @@ function M.common_on_attach(client, bufnr)
 	bufnnoremap("K", "<Cmd>lua vim.lsp.buf.hover()<CR>")
 
 	-- Signature help
-	bufnnoremap("<A-k>", "<Cmd>lua vim.lsp.buf.signature_help()<CR>")
+	bufnnoremap("<A-j>", "<Cmd>lua vim.lsp.buf.signature_help()<CR>")
 
 	-- Rename all references of symbol
 	-- bufnnoremap("<leader>R", "<Cmd>lua vim.lsp.buf.rename()<CR>")

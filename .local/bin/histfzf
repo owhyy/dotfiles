@@ -1,0 +1,4 @@
+#!/bin/bash
+
+choice=$(\cat "$HISTFILE" | fzf)
+echo $choice

@@ -11,6 +11,7 @@ alias \
   cfa="$EDITOR ~/.config/shell/aliasrc" \
   cfv="cd ~/.config/nvim/" \
   cfz="$EDITOR ~/.config/zsh/.zshrc" \
+  cfb="$EDITOR $HOME/.local/share/bookmark" \
   z="zathura" \
   smci="sudo make clean install" \
   config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME" \
@@ -18,7 +19,6 @@ alias \
   sdn="sudo shutdown -h now" \
   kvb="sudo killall -9 viber" \
   lf="lfrun" \
-  pomo='sleep 3000 && dunst | notify-send "break"' \
   pip='python -m pip' \
   upd='paru -Syu' \
   ..='cd ../' \
@@ -27,7 +27,25 @@ alias \
   .....='cd ../../../..' \
   ......='cd ../../../../..' \
   venv='source venv/bin/activate' \
-  yarn --use-yarnrc $XDG_CONFIG_HOME/yarn/config
+  yarn --use-yarnrc $XDG_CONFIG_HOME/yarn/config \
+  dcup='docker-compose up' \
+  dcb='docker-compose build' \
+  dcupb='docker-compose up --build' \
+  dcrm='docker-compose rm' \
+  dcps='docker-compose ps' \
+  dcstop='docker-compose stop' \
+  dcrestart='docker-compose restart' \
+  access='wine /home/snooze/.wine/drive_c/Program\ Files\ (x86)/Microsoft\ Office/Office12/MSACCESS.EXE'
+
+# Functions
+function dc() {
+  if [ -e "docker-compose/${1}" ]; then
+      docker-compose -f docker-compose.yml -f docker-compose/"${1}" "${@:2:101}"
+  else
+      docker-compose "${@:1:101}"
+  fi
+}
+  # pomo='sleep 3000 && dunst | notify-send "break"' \
 
 # List directory contents
 alias ll='ls -lh'
@@ -64,5 +82,6 @@ alias \
 
 # Django
 alias \
+  mpy='python manage.py' \
   runserver='python manage.py runserver' \
   testserver='python manage.py testserver'
